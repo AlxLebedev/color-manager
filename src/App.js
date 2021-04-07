@@ -3,11 +3,20 @@ import AddColorForm from './components/AddColorForm';
 import './global-styles/App.scss';
 
 function App() {
+  const addColorHandler = (colorName, colorCode) => {
+    const color = {
+      colorName,
+      colorCode
+    };
+    console.log(color);
+  }
+
+
   return (
     <div className="App">
       <Header />
       <main>
-        <AddColorForm/>
+        <AddColorForm addColorHandler={addColorHandler}/>
       </main>
     </div>
   );
