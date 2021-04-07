@@ -1,7 +1,7 @@
 import Color from '../Color';
 import './index.scss';
 
-const ColoursList = ({ colors = [] }) => {
+const ColoursList = ({ colors = [], delColorHandler = f => f }) => {
     return (   
         colors.length === 0 ?
         <p className="App__colours-list App__colours-list--empty">No colours yet...</p> :
@@ -10,7 +10,7 @@ const ColoursList = ({ colors = [] }) => {
                 colors.map((color, index) => {
                     return (
                         <li className="colours-list__item" key={index}>
-                            <Color {...color}/>
+                            <Color delColorHandler={delColorHandler} {...color}/>
                         </li>
                     )
                 })

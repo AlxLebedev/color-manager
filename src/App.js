@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Header from './components/Header/index';
 import ColoursList from './components/ColoursList';
 import AddColorForm from './components/AddColorForm';
@@ -9,6 +10,7 @@ function App() {
   
   const addColorHandler = (colorName, colorCode) => {
     const color = {
+      colorId: uuidv4(),
       colorName,
       colorCode
     };
@@ -19,12 +21,17 @@ function App() {
     setState({ colors });
   }
 
+  const delColorHandler = colorId => {
+    const colors = state.colors.filter(stateColor => stateColor.colorId !== colorId);
+    setState({ colors });
+  }
+
   return (
     <div className="App">
       <Header />
       <main>
         <AddColorForm addColorHandler={addColorHandler}/>
-        <ColoursList colors={state.colors}/>
+        <ColoursList colors={state.colors} delColorHandler={delColorHandler}/>
       </main>
     </div>
   );
