@@ -1,7 +1,8 @@
 @import './palette.scss';
 
 :root {
-    --bg-color: var(--color-black-light);
-    --text-heading-color: var(--color-blue);
-    --text-base-color: var(--color-white);
+    --bg-color: var(--color-black);
+    --text-color: var(--color-white);
+    --decor-color: var(--color-blue);
+    --accent-color: var(--color-purple)
 }

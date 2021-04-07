@@ -1,6 +1,6 @@
 import './index.scss';
 
-const Heading = ({headingLevel, headingText, headingClassName}) => {
+const Heading = ({headingLevel = "1", headingText = "heading", headingClassName = "heading"}) => {
     const HeadingTag = `h${headingLevel}`;
     return (
         <HeadingTag className={`heading ${headingClassName}`}>{headingText}</HeadingTag>

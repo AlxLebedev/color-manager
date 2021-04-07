@@ -1,5 +1,16 @@
 .App {
-    background-color: var(--bg-color);
     min-height: 100vh;
+    max-width: 1440px;
+    margin: auto;
+
+    &__header {
+        margin-bottom: 20px;
+    }
+
+    &__colours-list {
+        &--empty {
+            color: var(--text-color);
+        }
+    }
 }
   
