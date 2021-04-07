@@ -6,5 +6,11 @@
     &__header {
         margin-bottom: 20px;
     }
+
+    &__colours-list {
+        &--empty {
+            color: var(--text-color);
+        }
+    }
 }
   
