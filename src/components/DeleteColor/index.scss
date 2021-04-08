@@ -1,0 +1,15 @@
+.delete-color {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+    border-radius: 50%;
+    background-color: yellowgreen;
+
+    &:hover {
+        background-color: red;
+        cursor: pointer;
+    }
+}
