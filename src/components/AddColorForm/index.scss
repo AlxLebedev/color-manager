@@ -40,9 +40,12 @@
         border: 1px solid var(--decor-color);
         transition: color .3s, border-color .3s;
 
+        &:hover {
+            border-color: var(--accent-color);
+        }
+
         &:active {
             color: var(--accent-color);
-            border-color: var(--accent-color);
         }
     }
 }

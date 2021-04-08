@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Header from './components/Header/index';
-import ColoursList from './components/ColoursList';
+import Colors from './components/Colors';
 import AddColorForm from './components/AddColorForm';
 import './global-styles/App.scss';
 
@@ -31,7 +31,7 @@ function App() {
       <Header />
       <main>
         <AddColorForm addColorHandler={addColorHandler}/>
-        <ColoursList colors={state.colors} delColorHandler={delColorHandler}/>
+        <Colors colors={state.colors} delColorHandler={delColorHandler}/>
       </main>
     </div>
   );
