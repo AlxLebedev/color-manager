@@ -1,4 +1,29 @@
 .colours-list {
-    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 50px;
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+    list-style-type: none;
     color: var(--text-color);
+}
+
+@media(min-width: 768px) {
+    .colours-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width: 1024px) {
+    .colours-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(min-width: 1360px) {
+    .colours-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
