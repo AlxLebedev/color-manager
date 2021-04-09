@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     const localData = JSON.parse(localStorage.getItem('colors'));
-    if (localData.length) {
+    if (localData?.length) {
       setState({ colors: localData })
     };
   }, []);
