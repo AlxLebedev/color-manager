@@ -5,15 +5,19 @@ import './index.scss';
 const DeleteColor = ({ colorId, delColorHandler = f => f }) => {
     const [state, setState] = useState({ confirmationMenuOpened: false });
 
-    const confirmationToggle = () => {
+    const confirmationToggle = (e) => {
+        const { target } = e;
+        if (target.id === 'delete') {
+            delColorHandler(colorId);
+        }
         const isConfirmationMenuOpened = state.confirmationMenuOpened;
         setState({ confirmationMenuOpened: !isConfirmationMenuOpened })
     }
     return (
-        <div className="delete-color" onClick={() => { confirmationToggle() }}>
+        <div className="delete-color" onClick={(e) => { confirmationToggle(e) }}>
             {
                 state.confirmationMenuOpened ?
-                <ConfirmColorDeletion colorId={colorId} confirmationToggle={confirmationToggle} delColorHandler={delColorHandler}/> : ''
+                <ConfirmColorDeletion confirmationToggle={confirmationToggle} /> : ''
             }
         </div>
     );
