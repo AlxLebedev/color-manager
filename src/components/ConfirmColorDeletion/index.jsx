@@ -12,7 +12,7 @@ const ConfirmColorDeletion = ({ confirmationToggle =f => f }) => {
         return function removeListener() {
             document.removeEventListener('click', outsideListener)
         }
-    }, []);
+    });
 
     return (
         <ul className="confirm-deletion">

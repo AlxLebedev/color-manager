@@ -6,13 +6,14 @@ const DeleteColor = ({ colorId, delColorHandler = f => f }) => {
     const [state, setState] = useState({ confirmationMenuOpened: false });
 
     const confirmationToggle = (e) => {
+        console.log('confirmToogle');
+        e.stopPropagation();
         const { target } = e;
         if (target.id === 'delete') {
             delColorHandler(colorId);
-        } else {
-            const isConfirmationMenuOpened = state.confirmationMenuOpened;
-            setState({ confirmationMenuOpened: !isConfirmationMenuOpened })
         }
+        const isConfirmationMenuOpened = state.confirmationMenuOpened;
+        setState({ confirmationMenuOpened: !isConfirmationMenuOpened })
     }
     return (
         <div className="delete-color" onClick={(e) => { confirmationToggle(e) }}>
